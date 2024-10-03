@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    scroll-behavior: smooth;
+    background: url(assets/background-visual-board.jpg) no-repeat center/cover scroll;
+}
+
+header, main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    justify-content: center;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+main {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1em;
+    width: 100%;
+}
+
+.typewriter-text {
+    color: rgb(251, 240, 240);
+    font-size: 5rem;
+    overflow: hidden; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    border-right: .15em solid rgb(251, 240, 240); 
+    animation: typing 3.5s steps(50, end), 
+               deleting 3.5s steps(50, end) 3.5s infinite alternate, 
+               blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes deleting {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgb(251, 240, 240); }
+}
+
+.vision-board-title {
+    color: rgb(208, 206, 206);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-style: italic;
+    border: 0.05em solid rgb(208, 206, 206);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: background-color 0.25s linear;
+}
+
+.vision-board-title:hover {
+    background-color: rgb(30, 29, 29);
+}
+
+.vision-board-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.image-container {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px;
+    transition: transform 0.25s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.5);
+    border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+    .typewriter-text {
+        font-size: 2.5rem;
+    }
+
+    .vision-board-title {
+        font-size: 1.25rem; 
+        padding: 1rem;
+    }
+
+    .image-container {
+        width: 80%;
+        height: auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter-text {
+        font-size: 2rem; 
+    }
+
+    .vision-board-title {
+        font-size: 1rem; 
+        padding: 0.5rem; 
+    }
+
+    .image-container {
+        width: 100%; 
+        height: auto; 
+    }
+}
