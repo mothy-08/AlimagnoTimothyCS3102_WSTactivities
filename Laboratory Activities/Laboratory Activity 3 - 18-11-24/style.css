@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+:root {
+    --clr-bg: rgb(19, 19, 19);
+    --clr-text: rgb(253, 245, 237);
+    --clr-accent: rgb(43, 42, 42);
+    --clr-focus: rgba(253, 245, 237, 0.5);
+}
+
+* {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    height: 100vh;
+    font-family: "Audiowide", sans-serif;
+    background-color: var(--clr-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-text);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3rem;
+    text-align: center;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: var(--clr-accent);
+    padding: 1rem; 
+    min-width: 50vw;
+    height: 40vh;
+    border: none;
+    border-radius: 10px;
+    color: var(--clr-text);
+    resize: none;
+}
+
+textarea:focus {
+    outline: 1px solid var(--clr-focus);
+}
+
+textarea::placeholder {
+    color: var(--clr-focus);
+}
+
+textarea:focus::placeholder {
+    color: var(--clr-text);
+}
