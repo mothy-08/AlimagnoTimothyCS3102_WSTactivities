@@ -1,5 +1,16 @@
-document.getElementById("textInput").addEventListener("input", (e) => {
+const textInput = document.getElementById("textInput");
+const wordCount = document.getElementById("wordcount");
+const sentenceCount = document.getElementById("sentencecount");
+
+const updateCounts = (text) => {
+    const words = text.split(/\s+/).filter(Boolean).length;
+    const sentences = text.split(/[.!?]+/).filter(Boolean).length;
+
+    wordCount.textContent = `Words: ${words}`;
+    sentenceCount.textContent = `Sentences: ${sentences}`;
+};
+
+textInput.addEventListener("input", (e) => {
     const text = e.target.value.trim();
-    document.getElementById("wordcount").textContent = `Words: ${text.split(/\s+/).filter(Boolean).length}`;
-    document.getElementById("sentencecount").textContent = `Sentences: ${text.split(/[.!?]+/).filter(Boolean).length}`;
+    updateCounts(text);
 });
