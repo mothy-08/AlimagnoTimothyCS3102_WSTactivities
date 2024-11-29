@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+.poppins-medium {
+	font-family: "Poppins", serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.poppins-bold {
+	font-family: "Poppins", serif;
+	font-weight: 700;
+	font-style: normal;
+}
+
+:root {
+	--text-color-primary: #24292f;
+	--text-color-secondary: #061534;
+	--text-color-teritiary: #cf9f71;
+	--button-text-color: #24292f;
+	--container-color: #e8eaed;
+
+	--header-title-text-font: 700 7rem "Poppins", sans-serif;
+	--header-subtitle-text-font: 500 1.5rem "Poppins", sans-serif;
+	--button-text-font: 700 2.5rem "Poppins", sans-serif;
+	--text-font: 700 1.5rem "Poppins", sans-serif;
+
+	--border-radius: 40px;
+	--box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
+
+	--transition: all 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+body {
+	padding: 4rem;
+	background-image: linear-gradient(to right, #cfc6c7, #b9aba2);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+}
+
+header {
+	width: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1rem;
+}
+
+header h1 {
+	font: var(--header-title-text-font);
+	color: transparent;
+	background-image: linear-gradient(
+		to right,
+		var(--text-color-primary),
+		var(--text-color-teritiary),
+		var(--text-color-primary),
+		var(--text-color-teritiary)
+	);
+	background-size: 400% 400%;
+	background-clip: text;
+	animation: gradient 10s ease-in-out infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+header p {
+	font: var(--header-subtitle-text-font);
+	color: #ffff;
+	text-wrap: balance;
+	margin-left: 1rem;
+}
+
+main {
+	width: fit-content;
+	margin-top: 2rem;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	justify-content: space-evenly;
+	gap: 4rem;
+}
+
+.main__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.main__images-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.main__images-container img {
+	border-radius: 30px;
+	width: 135px;
+	height: 200px;
+	box-shadow: var(--box-shadow);
+	cursor: pointer;
+	transition: var(--transition);
+}
+
+.main__container ul {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.main__title {
+	font: var(--button-text-font);
+	color: var(--text-color-secondary);
+	text-align: center;
+}
+
+.main__list-content {
+	background-color: var(--container-color);
+	border-radius: var(--border-radius);
+	font: var(--text-font);
+	color: var(--button-text-color);
+	text-align: center;
+	padding: 0.2em 0;
+}
+
+.button__image {
+	width: 70px;
+}
+
+.button__link {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background-color: var(--container-color);
+	border-radius: var(--border-radius);
+	font: var(--button-text-font);
+	padding: 1rem;
+	transition: var(--transition);
+}
+
+.button__link--view-more {
+	font: var(--text-font);
+	justify-content: center;
+}
+
+.button__link:hover,
+.main__container img:hover {
+	border-radius: 10px;
+	opacity: 0.7;
+}
+
+.popup {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: var(--container-color);
+	color: var(--button-text-color);
+	font: var(--text-font);
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	border-radius: 10px;
+	box-shadow: var(--box-shadow);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(10px);
+	transition: all 0.3s ease;
+	z-index: 1000;
+}
+
+.popup.show {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+@media (max-width: 610px) {
+	header h1 {
+		font-size: 5rem;
+	}
+
+	header p {
+		font-size: 1.25rem;
+	}
+
+	.main__title {
+		font-size: 2rem;
+	}
+
+	.button__link {
+		font-size: 1.5rem;
+	}
+
+	.button__image {
+		width: 50px;
+	}
+
+	.main__container {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 370px) {
+	header h1 {
+		font-size: 4rem;
+	}
+
+	header p {
+		font-size: 1rem;
+	}
+}
